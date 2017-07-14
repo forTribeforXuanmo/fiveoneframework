@@ -8,14 +8,12 @@ import java.lang.annotation.Target;
 /**
  * author: lishengzhu
  * eamil:530735771@qq.com
- * date:2017/6/1
- * time:20:49
+ * date:2017/7/14
+ * time:23:11
  *
- * 相当于spring的requestbody返回json数据给前台
  */
-
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Action {
-    String value();
+public @interface Data {
+
 }

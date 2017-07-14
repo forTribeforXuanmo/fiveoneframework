@@ -17,20 +17,38 @@
     <title> ***</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
-    <link href="${ctx}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${ctx}/css/font-awesome.css" rel="stylesheet">
-    <link href="${ctx}/css/animate.css" rel="stylesheet">
-    <script type="text/javascript" src="${ctx}/js/jquery.min.js"></script>
-    <script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
-    <style type="text/css">
 
-    </style>
 </head>
 <body>
 这里是go2.jsp
+<script src="/asset/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            url:'/noParamTest',
+            type:'get',
+            success:function (data) {
+                console.log(data);
+                console.log("data.a=="+data.a);
 
+            }
+        });
+        $.ajax({
+            url:'/noParamTest2',
+            type:'get',
+            success:function (data) {
+               console.log(data);
+            }
+        });
+        $.ajax({
+            url:'/annotationTest',
+            type:'post',
+            data:{name:'lsz'},
+            success:function (data) {
+                console.log(data);
+            }
+        });
+    })
+</script>
 </body>
 </html>
-<script type="text/javascript">
-
-</script>

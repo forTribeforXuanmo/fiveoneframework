@@ -17,6 +17,12 @@ import java.util.Set;
  * date:2017/6/1
  * time:22:39
  * 控制器助手
+ *
+ * 请求与类中每个方法的映射，比如
+ * <p>
+ *     get:/queryUser-->A.queryUser，前面封装成Request对象，后面封装成Handler对象
+ *     而且相同的请求应该属于同一个Request对象,因此重写Request的equals()和hashCode()方法
+ *  <p/>
  */
 public final class ControllerHelper {
     //存放请求与处理器的映射
@@ -38,6 +44,7 @@ public final class ControllerHelper {
                             if(mapping.matches("\\w+:/\\w*")){
                                 String[] array=mapping.split(":");
                                 if(ArrayUtils.isNotEmpty(array)&& array.length==2){
+                                    //全部转小写，这样get和GET都一样了
                                     String requestMethod=array[0].toLowerCase();
                                     String requestPath=array[1];
                                     Request request=new Request(requestMethod,requestPath);

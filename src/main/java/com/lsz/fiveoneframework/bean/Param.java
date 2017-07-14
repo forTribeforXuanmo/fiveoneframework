@@ -1,6 +1,8 @@
 package com.lsz.fiveoneframework.bean;
 
 import com.lsz.fiveoneframework.util.CastUtil;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.MapUtils;
 
 import java.util.Map;
 
@@ -28,6 +30,9 @@ public class Param {
     }
     public String getString(String name){
         return CastUtil.castString(paramMap.get(name));
+    }
+    public boolean isEmpty(){
+        return MapUtils.isEmpty(paramMap);
     }
 
 }

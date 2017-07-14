@@ -35,9 +35,9 @@ public final class ReflectionUtil {
         try {
              result=method.invoke(obj,agrs);
         } catch (IllegalAccessException e) {
-            logger.error("实例化异常",e);
+            logger.error("执行方法异常",e);
         } catch (InvocationTargetException e) {
-            logger.error("实例化异常",e);
+            logger.error("执行方法异常",e);
         }
         return result;
     }
